@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: chat-server
+  datasource:
+    url: jdbc:mysql://localhost:3306/gradution_chat?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true
+    username: root
+    password: 333
+  session:
+    store-type: redis
+    timeout: 10m
+
+  # rabbitmq 配置 其余默认
+  rabbitmq:
+    port: 5672
+    username: guest
+    password: guest
+    host: localhost
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+
+server:
+  port: 7004
+
+# redis 配置 结尾默认值
+
+

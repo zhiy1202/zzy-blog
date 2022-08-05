@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: resource-server
+  datasource:
+    url: jdbc:mysql://localhost:3306/gradution-resource?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true
+    username: root
+    password: 333
+  session:
+    store-type: redis
+    timeout: 10m
+
+  # rabbitmq 配置 其余默认
+  rabbitmq:
+    port: 5672
+    username: guest
+    password: guest
+    host: localhost
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+  servlet:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 200MB
+server:
+  port: 7003
+
+# 自定义文件网路路径
+zzy:
+  file-config:
+    protocol: http
+    host: localhost
+    port: 7003
+
+
+
+# redis 配置 结尾默认值
+
+

@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: user-server
+  datasource:
+    url: jdbc:mysql://localhost:3306/gradution-user?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true
+    username: root
+    password: 333
+  mail:
+    host: smtp.qq.com
+    username: zhiy1202@qq.com
+    password: fwjkfovzcipbddig
+    default-encoding: UTF-8
+  session:
+    store-type: redis
+    timeout: 10m
+
+# rabbitmq 配置 其余默认
+  rabbitmq:
+    port: 5672
+    username: guest
+    password: guest
+    host: localhost
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+
+server:
+  port: 7001
+
+
+# redis 配置 结尾默认值
+
+

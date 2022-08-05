@@ -1,0 +1,38 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: user-server
+          predicates:
+            - Path=/user/**
+          uri: http://localhost:7001
+        - id: blog-server
+          predicates:
+            - Path=/blog/**
+          uri: http://localhost:7002
+        - id: resource-server
+          predicates:
+            - Path=/resource/**
+          uri: http://localhost:7003
+        - id: chat-server
+          predicates:
+            - Path=/chat/**
+          uri: http://localhost:7004
+            # gateway的全局跨域请求配置
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedHeaders: "*"
+            allowedOrigins: "*"
+            allowCredentials: true
+            allowedMethods: "*"
+            maxage: 600
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+  application:
+    name: gateway
+
+server:
+  port: 81

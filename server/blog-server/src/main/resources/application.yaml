@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: blog-server
+  datasource:
+    url: jdbc:mysql://localhost:3306/gradution-blog?serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true&allowMultiQueries=true&useSSL=false&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 333
+    tomcat:
+      initSQL: SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci
+  session:
+    store-type: redis
+    timeout: 10m
+
+  # rabbitmq 配置 其余默认
+  rabbitmq:
+    port: 5672
+    username: guest
+    password: guest
+    host: localhost
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+server:
+  port: 7002
+
+# redis 配置 结尾默认值
+
+
